@@ -31,6 +31,7 @@ const App = () => {
         description: description.value,
       })
       .then(() => fetchNotes());
+      e.target.reset();
   }
 
   function handleDeleteNote(noteId) {

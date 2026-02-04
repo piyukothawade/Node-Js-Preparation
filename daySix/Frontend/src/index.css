@@ -1,34 +1,105 @@
-*{
+* {
   padding: 0;
   margin: 0;
-  
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
-  background-color: #333;
+
+body {
+  background: linear-gradient(135deg, #1f2933, #111827);
+  min-height: 100vh;
+  padding: 30px;
+  color: #fff;
 }
-.note{
-  background-color: rgb(140, 250, 250);
-  width: fit-content;
-  padding: 20px;
-  margin: 5px;
-  border-radius: 5px;
-}
-.notes{
+
+/* Form styling */
+form {
   display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
-input{
-  width: 300px;
-  height: 30px;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
-  border: 2px solid gray;
-}
-button{
-  background-color: rgb(72, 91, 72);
+
+input {
+  width: 260px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: 2px solid #38bdf8;
+}
+
+/* Button styling */
+button {
+  background: #22c55e;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #16a34a;
+  transform: translateY(-2px) scale(0.99);
+  
+}
+
+/* Notes container */
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Individual note card */
+.note {
+  background: #e0f2fe;
+  color: #000;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.note h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.note p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #1f2933;
+}
+
+/* Action buttons inside note */
+.note button {
+  background: #0ea5e9;
+  color: white;
+  margin: 5px 5px 0 0;
+}
+
+.note button:hover {
+  background: #0284c7;
+}
+
+.note button:nth-child(4) {
+  background: #ef4444;
+}
+
+.note button:nth-child(4):hover {
+  background: #dc2626;
 }
