@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const App = () => {
+
+  const API = "https://frontendintegration-t8hs.onrender.com/"
   const [notes, setNotes] = useState([])
 
   function fetchNotes(){
-    axios.get("http://localhost:3000/api/notes")
+    axios.get(`${API}/api/notes`)
   .then(res=>{
     setNotes(res.data.notes)
   })
@@ -23,7 +25,7 @@ const App = () => {
     const {title, description} = e.target.elements;
     console.log(title.value, description.value)
 
-    axios.post("http://localhost:3000/api/notes",{
+    axios.post(`${API}/api/notes`,{
       title : title.value,
       description: description.value
     })
@@ -35,7 +37,7 @@ const App = () => {
   function handleDeleteNote(noteId){
     // console.log(noteId)
     alert("Are you sure you want to delete this note?")
-    axios.delete(`http://localhost:3000/api/notes/${noteId}`)
+    axios.delete(`${API}/api/notes/${noteId}`)
     .then(res=>{
       fetchNotes()
     })
@@ -43,7 +45,7 @@ const App = () => {
   }
   function handleEditNote(noteId){
     const newDescription = prompt("Enter new description");
-    axios.patch(`http://localhost:3000/api/notes/${noteId}`,{
+    axios.patch(`${API}/api/notes/${noteId}`,{
        description: newDescription 
     })
     .then(res=>{
