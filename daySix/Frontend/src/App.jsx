@@ -54,8 +54,8 @@ const App = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input name="title" type="text" placeholder="Enter Title" />
-        <input name="description" type="text" placeholder="Enter Description" />
+        <input required name="title" type="text" placeholder="Enter Title" />
+        <input required name="description" type="text" placeholder="Enter Description" />
         <button>Add Note</button>
       </form>
 
